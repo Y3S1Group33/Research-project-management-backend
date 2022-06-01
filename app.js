@@ -1,6 +1,6 @@
-const express = require("express");
-const cors=require("cors");
-const connect = require("./utils/connection");
+import express from "express";
+import cors from "cors";
+import { connect } from "./utils/connection.js";
 
 //const exampleRouter = require("");
 
@@ -16,4 +16,10 @@ app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 
-module.exports = app;
+const PORT = 5000;
+
+app.listen(PORT, () => {
+    console.log(`Server started on port ${PORT}`);
+  });
+
+  export default app;

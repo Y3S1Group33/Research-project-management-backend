@@ -2,10 +2,12 @@
   "name": "project-management-backend",
   "version": "1.0.0",
   "description": "Project management application for AF module",
-  "main": "index.js",
+  "main": "server.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js"
+    "start": "nodemon app.js",
+    "dev": "nodemon app.js"
   },
   "author": "",
   "license": "ISC",

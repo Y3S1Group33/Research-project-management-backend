@@ -1,6 +1,6 @@
-const  mongoose =require("mongoose");
+import mongoose from "mongoose";
 
-const connect = () => {
+export const connect = () => {
   mongoose.connect("mongodb+srv://admin123:admin123@sliitrpm.uw5wb.mongodb.net/?retryWrites=true&w=majority", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -10,8 +10,6 @@ const connect = () => {
   });
 };
 
-const disconnect = (done) => {
+export const disconnect = (done) => {
   mongoose.disconnect(done);
 };
-
-module.exports = connect, disconnect;
