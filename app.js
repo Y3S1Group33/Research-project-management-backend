@@ -7,6 +7,7 @@ import { connect } from "./utils/connection.js";
 import referenceRoutes from "./routes/reference.js";
 import studentGroupRouter from "./routes/studentGroupRoute.js";
 import researchTopicRouter from "./routes/topicRequestRoute.js";
+import panelChatRouter from "./routes/panelChat.js";
 
 const app = express();
 app.use(cors());
@@ -18,6 +19,7 @@ connect();
 app.use("/api", referenceRoutes);
 app.use("/api", studentGroupRouter);
 app.use("/api", researchTopicRouter);
+app.use("/api", panelChatRouter);
 
 app.get("/", (req, res) => {
   res.send("Hello World!");
