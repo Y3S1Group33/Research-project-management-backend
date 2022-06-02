@@ -19,7 +19,8 @@ export const getResearchGroupByIdRepo = (id) =>
         });
 
 export const getResearchGroupBySupervisorIDRepo = (id) =>
-    ResearchGroups.findById({supervisor : id})
+
+    ResearchGroups.find({supervisor : id})
         .then((ResearchGroup) => {
             if (!ResearchGroup) {
                 throw new Error("Research Group Not Found.", 404);
