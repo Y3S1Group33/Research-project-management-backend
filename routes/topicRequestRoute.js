@@ -5,6 +5,8 @@ import {
     getResearchTopic,
     updateResearchTopic,
     deleteResearchTopic,
+    getResearchTopicsByFeedbackGivenStatusAndSupervisorID,
+    getResearchTopicsByReadyStatusAndPanelMemberID
 } from "../controllers/topicRequestController.js";
 
 const researchTopicRouter = express.Router();
@@ -14,5 +16,7 @@ researchTopicRouter.get("/researchTopic/:id", getResearchTopicById);
 researchTopicRouter.get("/researchTopic", getResearchTopic);
 researchTopicRouter.put("/researchTopic/:id", updateResearchTopic);
 researchTopicRouter.delete("/researchTopic/:id", deleteResearchTopic);
+researchTopicRouter.get("/researchTopic/feedbackGiven/:id", getResearchTopicsByFeedbackGivenStatusAndSupervisorID);
+researchTopicRouter.get("/researchTopic/ready/:id", getResearchTopicsByReadyStatusAndPanelMemberID);
 
 export default researchTopicRouter;
