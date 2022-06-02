@@ -5,6 +5,7 @@ import {
     getResearchGroup,
     updateResearchGroup,
     deleteResearchGroup,
+    getResearchGroupBySupervisorID
 
 } from "../controllers/researchGroupController.js";
 
@@ -15,5 +16,6 @@ researchGroupRouter.get("/researchGroup", getResearchGroup);
 researchGroupRouter.get("/researchGroup/:id", getResearchGroupById);
 researchGroupRouter.put("/researchGroup/:id", updateResearchGroup);
 researchGroupRouter.delete("/researchGroup/:id", deleteResearchGroup);
+researchGroupRouter.get("/researchGroup/supervisor/:id", getResearchGroupBySupervisorID);
 
 export default researchGroupRouter;

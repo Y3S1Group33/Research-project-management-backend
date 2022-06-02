@@ -3,10 +3,12 @@ import {
     getResearchGroupByIdRepo,
     getResearchGroupRepo,
     updateResearchGroupRepo,
-    deleteResearchGroupRepo
+    deleteResearchGroupRepo,
+    getResearchGroupBySupervisorIDRepo
 } from "../repository/researchGroupRepo.js"
 
 export const saveResearchGroupService = async (data) => {
+    console.log(data);
     const { studentGroupId, topicID, researchPanelId, supervisor, coSupervisor, chatID, status } = data;
     try {
         await saveResearchGroupRepo({ studentGroupId, topicID, researchPanelId, supervisor, coSupervisor, chatID, status });
@@ -19,6 +21,15 @@ export const saveResearchGroupService = async (data) => {
 export const getResearchGroupByIdService = async (id) => {
     try {
         const researchGroup = await getResearchGroupByIdRepo(id);
+        return Promise.resolve(researchGroup);
+    } catch (err) {
+        throw new Error(err.message, err.status);
+    }
+};
+
+export const getResearchGroupBySupervisorIDService = async (id) => {
+    try {
+        const researchGroup = await getResearchGroupBySupervisorIDRepo(id);
         return Promise.resolve(researchGroup);
     } catch (err) {
         throw new Error(err.message, err.status);

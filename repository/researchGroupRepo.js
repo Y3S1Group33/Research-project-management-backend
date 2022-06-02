@@ -1,7 +1,7 @@
-import { ResearchGroup } from "../models/researchGroupModel.js";
+import { ResearchGroups } from "../models/researchGroupModel.js";
 
 export const saveResearchGroupRepo = (data) =>
-    ResearchGroup.create(data)
+    ResearchGroups.create(data)
         .then((ResearchGroup) => {
             return Promise.resolve(ResearchGroup);
         })
@@ -10,7 +10,16 @@ export const saveResearchGroupRepo = (data) =>
         });
 
 export const getResearchGroupByIdRepo = (id) =>
-    ResearchGroup.findById(id)
+    ResearchGroups.findById(id)
+        .then((ResearchGroup) => {
+            if (!ResearchGroup) {
+                throw new Error("Research Group Not Found.", 404);
+            }
+            return Promise.resolve(ResearchGroup);
+        });
+
+export const getResearchGroupBySupervisorIDRepo = (id) =>
+    ResearchGroups.findById({supervisor : id})
         .then((ResearchGroup) => {
             if (!ResearchGroup) {
                 throw new Error("Research Group Not Found.", 404);
@@ -20,7 +29,7 @@ export const getResearchGroupByIdRepo = (id) =>
 
 
 export const getResearchGroupRepo = () =>
-    ResearchGroup.find()
+    ResearchGroups.find()
         .then((ResearchGroup) => {
             return Promise.resolve(ResearchGroup);
         })
@@ -29,7 +38,7 @@ export const getResearchGroupRepo = () =>
         });
 
 export const updateResearchGroupRepo = (id, data) =>
-    ResearchGroup.findByIdAndUpdate(id, data, {new: true})
+    ResearchGroups.findByIdAndUpdate(id, data, {new: true})
         .then((ResearchGroup) => {
             if(!ResearchGroup) {
                 throw new Error("Research Group Not Found.", 404);
@@ -41,7 +50,7 @@ export const updateResearchGroupRepo = (id, data) =>
         });
 
 export const deleteResearchGroupRepo = (id) =>
-    ResearchGroup.findByIdAndDelete(id)
+    ResearchGroups.findByIdAndDelete(id)
         .then((ResearchGroup) => {
             if(ResearchGroup) {
                 throw new Error("Research Group Not Found.", 404);

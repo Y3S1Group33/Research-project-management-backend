@@ -15,4 +15,4 @@ const ResearchGroup = new Schema(
     {versionKey: false},
 );
 
-export const ResearchGroup = mongoose.model("ResearchGroup", ResearchGroup);
+export const ResearchGroups = mongoose.model("ResearchGroups", ResearchGroup);
