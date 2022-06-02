@@ -8,9 +8,9 @@ import {
 
 
 export const makeSubmissionService = async (data) => {
-    const { title, submittedDate, submittedStudent,imageUrl } = data;
+    const { title, submittedDate, submittedStudent,imageUrl, evaluation } = data;
     try {
-        await makeSubmission({ title, submittedDate,submittedStudent,imageUrl});
+        await makeSubmission({ title, submittedDate,submittedStudent,imageUrl, evaluation});
         return Promise.resolve("Successfully saved CreateSubmission.");
     } catch (err) {
         throw new Error(err.message, err.status);
