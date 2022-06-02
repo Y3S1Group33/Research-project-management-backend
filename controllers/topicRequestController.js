@@ -5,7 +5,8 @@ import {
     updateResearchTopicService,
     deleteResearchTopicService,
     getResearchTopicsByFeedbackGivenStatusAndSupervisorIDService,
-    getResearchTopicsByReadyStatusAndPanelMemberService
+    getResearchTopicsByReadyStatusAndPanelMemberService,
+    getResearchTopicsByInitialStatusService
 } from "../services/topicRequestService.js";
 
 export const saveResearchTopic = async (req, res) => {
@@ -35,6 +36,8 @@ export const getResearchTopicsByFeedbackGivenStatusAndSupervisorID = async (req,
     }
 };
 
+
+
 export const getResearchTopicsByReadyStatusAndPanelMemberID = async (req, res) => {
     try {
         const researchTopic = await getResearchTopicsByReadyStatusAndPanelMemberService(req.params.id);
@@ -43,7 +46,16 @@ export const getResearchTopicsByReadyStatusAndPanelMemberID = async (req, res) =
         res.json(err.message);
     }
 };
-  
+
+export const getResearchTopicsByInitialStatus = async (req, res) => {
+    try {
+        const researchTopic = await getResearchTopicsByInitialStatusService();
+        res.json(researchTopic);
+    } catch (err) {
+        res.json(err.message);
+    }
+};
+
 export const getResearchTopic = async (req, res) => {
     try {
       const researchTopic = await getResearchTopicService();

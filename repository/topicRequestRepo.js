@@ -45,6 +45,15 @@ TopicRequests.find()
         throw new Error("Internal Server Error.", 500);
     });
 
+export const getResearchTopic = () =>
+    TopicRequests.find()
+        .then((TopicRequests) => {
+            return Promise.resolve(TopicRequests);
+        })
+        .catch(() => {
+            throw new Error("Internal Server Error.", 500);
+        });
+
 export const updateResearchTopic = (id, data) =>
 TopicRequests.findByIdAndUpdate(id, data, {new: true})
     .then((TopicRequests) => {
