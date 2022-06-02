@@ -5,7 +5,9 @@ const { Schema } = mongoose;
 const ChatData = new Schema(
     {
         researchTeamId: String,
-        chatThread : [{user : String , message : String}]
+        userName : String,
+        message : String,
+        date : String,
     },
     {versionKey: false},
 );
