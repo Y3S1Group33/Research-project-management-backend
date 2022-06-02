@@ -4,7 +4,8 @@ import {
     getResearchGroupRepo,
     updateResearchGroupRepo,
     deleteResearchGroupRepo,
-    getResearchGroupBySupervisorIDRepo
+    getResearchGroupBySupervisorIDRepo,
+    getResearchGroupByStudentIDRepo
 } from "../repository/researchGroupRepo.js"
 
 export const saveResearchGroupService = async (data) => {
@@ -36,6 +37,14 @@ export const getResearchGroupBySupervisorIDService = async (id) => {
     }
 };
 
+export const getResearchGroupByStudentGroupIDService = async (id) => {
+    try {
+        const researchGroup = await getResearchGroupByStudentIDRepo(id);
+        return Promise.resolve(researchGroup);
+    } catch (err) {
+        throw new Error(err.message, err.status);
+    }
+};
 export const getResearchGroupService = async () => {
     try {
         const researchGroup = await getResearchGroupRepo();

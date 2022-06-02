@@ -28,6 +28,16 @@ export const getResearchGroupBySupervisorIDRepo = (id) =>
             return Promise.resolve(ResearchGroup);
         });
 
+export const getResearchGroupByStudentIDRepo = (id) =>
+
+    ResearchGroups.find({studentGroupId : id})
+        .then((ResearchGroup) => {
+            if (!ResearchGroup) {
+                throw new Error("Research Group Not Found.", 404);
+            }
+            return Promise.resolve(ResearchGroup);
+        });
+
 
 export const getResearchGroupRepo = () =>
     ResearchGroups.find()

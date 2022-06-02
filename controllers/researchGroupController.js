@@ -4,7 +4,8 @@ import {
     getResearchGroupService,
     updateResearchGroupService,
     deleteResearchGroupService,
-    getResearchGroupBySupervisorIDService
+    getResearchGroupBySupervisorIDService,
+    getResearchGroupByStudentGroupIDService
 } from "../services/researchGroupService.js";
 
 export const saveResearchGroup = async (req, res) => {
@@ -28,6 +29,15 @@ export const getResearchGroupById = async (req, res) => {
 export const getResearchGroupBySupervisorID = async (req, res) => {
     try {
         const researchGroup = await getResearchGroupBySupervisorIDService(req.params.id);
+        res.json(researchGroup);
+    } catch (err) {
+        res.json(err.message);
+    }
+};
+
+export const getResearchGroupByStudentGroupID = async (req, res) => {
+    try {
+        const researchGroup = await getResearchGroupByStudentGroupIDService(req.params.id);
         res.json(researchGroup);
     } catch (err) {
         res.json(err.message);
