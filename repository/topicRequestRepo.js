@@ -46,7 +46,7 @@ TopicRequests.find()
     });
 
 export const getResearchTopicsByInitialStatusRepo = () =>
-    TopicRequests.find({status: "initial"})
+    TopicRequests.find({status : "initial"})
         .then((TopicRequests) => {
             return Promise.resolve(TopicRequests);
         })
