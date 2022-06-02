@@ -1,12 +1,11 @@
 import express from "express";
-import res from "express/lib/response";
 import {
     saveResearchTopic,
     getResearchTopicById,
     getResearchTopic,
     updateResearchTopic,
     deleteResearchTopic,
-} from "../controllers/topicRequest";
+} from "../controllers/topicRequest.js";
 
 const researchTopicRouter = express.Router();
 

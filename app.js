@@ -5,6 +5,8 @@ import multer from "multer";
 import { connect } from "./utils/connection.js";
 
 import markingSchemaRoutes from "./routes/markingSchema.js";
+import studentGroupRouter from "./routes/studentGroup.js";
+import researchTopicRouter from "./routes/topicRequest.js";
 
 const app = express();
 app.use(cors());
@@ -14,6 +16,8 @@ app.use(express.json());
 connect();
 
 app.use("/api", markingSchemaRoutes);
+app.use("/api", studentGroupRouter);
+app.use("/api", researchTopicRouter);
 
 app.get("/", (req, res) => {
   res.send("Hello World!");

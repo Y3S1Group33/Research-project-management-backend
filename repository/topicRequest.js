@@ -1,4 +1,4 @@
-import { TopicRequests } from "../models/topicRequest";
+import { TopicRequests } from "../models/topicRequest.js";
 
 export const saveResearchTopic = (data) =>
 TopicRequests.create(data)
