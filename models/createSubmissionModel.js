@@ -10,7 +10,8 @@ const createSubmissionModel = new Schema(
         imageUrl: {
             type: String,
             required: true,
-        }
+        },
+        evaluation : String
     }
 
 );
