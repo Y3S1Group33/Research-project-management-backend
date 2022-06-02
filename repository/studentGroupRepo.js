@@ -1,4 +1,4 @@
-import { StudentGroups } from "../models/studentGroup.js";
+import { StudentGroups } from "../models/studentGroupModel.js";
 
 export const saveStudentGroup = (data) =>
 StudentGroups.create(data)

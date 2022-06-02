@@ -4,7 +4,7 @@ import {
     getResearchTopic,
     updateResearchTopic,
     deleteResearchTopic,
-} from "../repository/topicRequest.js"
+} from "../repository/topicRequestRepo.js"
 
 export const saveResearchTopicService = async (data) => {
     const { studentGroupId, topic, researchPanelId, supervisor, coSupervisor, feedback, status } = data;

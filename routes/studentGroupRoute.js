@@ -5,7 +5,7 @@ import {
     getStudentGroup,
     updateStudentGroup,
     deleteStudentGroup,
-} from "../controllers/studentGroup.js";
+} from "../controllers/studentGroupController.js";
 
 const studentGroupRouter = express.Router();
 

@@ -4,7 +4,7 @@ import {
     getResearchTopicService,
     updateResearchTopicService,
     deleteResearchTopicService
-} from "../services/topicRequest.js";
+} from "../services/topicRequestService.js";
 
 export const saveResearchTopic = async (req, res) => {
     try {

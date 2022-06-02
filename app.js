@@ -5,8 +5,8 @@ import multer from "multer";
 import { connect } from "./utils/connection.js";
 
 import markingSchemaRoutes from "./routes/markingSchema.js";
-import studentGroupRouter from "./routes/studentGroup.js";
-import researchTopicRouter from "./routes/topicRequest.js";
+import studentGroupRouter from "./routes/studentGroupRoute.js";
+import researchTopicRouter from "./routes/topicRequestRoute.js";
 
 const app = express();
 app.use(cors());

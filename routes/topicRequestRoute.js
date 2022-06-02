@@ -5,7 +5,7 @@ import {
     getResearchTopic,
     updateResearchTopic,
     deleteResearchTopic,
-} from "../controllers/topicRequest.js";
+} from "../controllers/topicRequestController.js";
 
 const researchTopicRouter = express.Router();
 

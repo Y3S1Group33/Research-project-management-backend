@@ -4,7 +4,7 @@ import {
     getStudentGroup,
     updateStudentGroup,
     deleteStudentGroup,
-} from "../repository/studentGroup.js"
+} from "../repository/studentGroupRepo.js"
 
 export const saveStudentGroupService = async (data) => {
     const { groupName, std1, std2, std3, std4 } = data;

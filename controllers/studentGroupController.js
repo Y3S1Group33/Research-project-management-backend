@@ -4,7 +4,7 @@ import {
     getStudentGroupService,
     updateStudentGroupService,
     deleteStudentGroupService
-} from "../services/studentGroup.js";
+} from "../services/studentGroupService.js";
 
 export const saveStudentGroup = async (req, res) => {
     try {
