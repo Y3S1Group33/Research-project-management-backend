@@ -1,15 +1,15 @@
 import {
-    saveResearchGroup,
-    getResearchGroupById,
-    getResearchGroup,
-    updateResearchGroup,
-    deleteResearchGroup
+    saveResearchGroupRepo,
+    getResearchGroupByIdRepo,
+    getResearchGroupRepo,
+    updateResearchGroupRepo,
+    deleteResearchGroupRepo
 } from "../repository/researchGroupRepo.js"
 
 export const saveResearchGroupService = async (data) => {
     const { studentGroupId, topicID, researchPanelId, supervisor, coSupervisor, chatID, status } = data;
     try {
-        await saveResearchGroup({ studentGroupId, topicID, researchPanelId, supervisor, coSupervisor, chatID, status });
+        await saveResearchGroupRepo({ studentGroupId, topicID, researchPanelId, supervisor, coSupervisor, chatID, status });
         return Promise.resolve("Successfully Create Research Group.");
     } catch (err) {
         throw new Error(err.message, err.status);
@@ -18,7 +18,7 @@ export const saveResearchGroupService = async (data) => {
 
 export const getResearchGroupByIdService = async (id) => {
     try {
-        const researchGroup = await getResearchGroupById(id);
+        const researchGroup = await getResearchGroupByIdRepo(id);
         return Promise.resolve(researchGroup);
     } catch (err) {
         throw new Error(err.message, err.status);
@@ -27,7 +27,7 @@ export const getResearchGroupByIdService = async (id) => {
 
 export const getResearchGroupService = async () => {
     try {
-        const researchGroup = await getResearchGroup();
+        const researchGroup = await getResearchGroupRepo();
         return Promise.resolve(researchGroup);
     } catch (err) {
         throw new Error(err.message, err.status);
@@ -36,7 +36,7 @@ export const getResearchGroupService = async () => {
 
 export const updateResearchGroupService = async (id, data) => {
     try {
-        const researchGroup = await updateResearchGroup(id, data);
+        const researchGroup = await updateResearchGroupRepo(id, data);
         return Promise.resolve(researchGroup);
     } catch (err) {
         throw new Error(err.message, err.status);
@@ -45,7 +45,7 @@ export const updateResearchGroupService = async (id, data) => {
 
 export const deleteResearchGroupService = async (id) => {
     try {
-        const researchGroup = await deleteResearchGroup(id);
+        const researchGroup = await deleteResearchGroupRepo(id);
         return Promise.resolve(researchGroup);
     } catch (err) {
         throw new Error(err.message, err.status);
