@@ -5,7 +5,8 @@ import {
     updateResearchTopic,
     deleteResearchTopic,
     getResearchTopicsByFeedbackGivenStatusAndSupervisorIDRepo,
-    getResearchTopicsByReadyStatusAndPanelMemberIDRepo
+    getResearchTopicsByReadyStatusAndPanelMemberIDRepo,
+    getResearchTopicsByInitialStatusRepo
 
 } from "../repository/topicRequestRepo.js"
 
@@ -54,6 +55,15 @@ export const getResearchTopicService = async () => {
       throw new Error(err.message, err.status);
     }
   };
+
+export const getResearchTopicsByInitialStatusService = async () => {
+    try {
+        const researchTopic = await getResearchTopicsByInitialStatusRepo();
+        return Promise.resolve(researchTopic);
+    } catch (err) {
+        throw new Error(err.message, err.status);
+    }
+};
   
 export const updateResearchTopicService = async (id, data) => {
     try {

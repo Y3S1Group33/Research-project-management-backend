@@ -8,6 +8,7 @@ import referenceRoutes from "./routes/reference.js";
 import studentGroupRouter from "./routes/studentGroupRoute.js";
 import researchTopicRouter from "./routes/topicRequestRoute.js";
 import panelChatRouter from "./routes/panelChat.js";
+import researchGroupRouter from "./routes/researchGroupRoutes.js";
 
 const app = express();
 app.use(cors());
@@ -20,6 +21,8 @@ app.use("/api", referenceRoutes);
 app.use("/api", studentGroupRouter);
 app.use("/api", researchTopicRouter);
 app.use("/api", panelChatRouter);
+app.use("/api", researchGroupRouter);
+
 
 app.get("/", (req, res) => {
   res.send("Hello World!");
