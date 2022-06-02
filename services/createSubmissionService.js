@@ -1,6 +1,7 @@
 import {
     makeSubmission,
     getLatestStudentSubmissions,
+    updateLatestStudentSubmissions
 
 } from "../repository/createSubmissionRepo.js";
 
@@ -25,4 +26,13 @@ export const getLatestStudentSubmissionService = async () => {
         throw new Error(err.message, err.status);
     }
 };
+
+export const updateLatestStudentSubmissionService = async (id, data) => {
+    try {
+      const markingSchema = await updateLatestStudentSubmissions(id, data);
+      return Promise.resolve(markingSchema);
+    } catch (err) {
+      throw new Error(err.message, err.status);
+    }
+  };
 

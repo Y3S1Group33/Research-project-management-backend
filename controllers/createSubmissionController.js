@@ -1,6 +1,7 @@
 import {
     makeSubmissionService,
     getLatestStudentSubmissionService,
+    updateLatestStudentSubmissionService
 
 } from "../services/createSubmissionService.js";
 
@@ -23,3 +24,12 @@ export const getLatestStudentSubmissionController = async (req, res) => {
         res.json(err.message);
     }
 };
+
+export const updateLatestStudentSubmissionController = async (req, res) => {
+    try {
+      const markingSchema = await updateLatestStudentSubmissionService(req.params.id, req.body);
+      res.json("Successfully updated submission");
+    } catch (err) {
+      res.json(err.message);
+    }
+  };
