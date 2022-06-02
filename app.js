@@ -4,7 +4,7 @@ import bodyParser from "body-parser"
 import multer from "multer";
 import { connect } from "./utils/connection.js";
 
-import markingSchemaRoutes from "./routes/markingSchema.js";
+import referenceRoutes from "./routes/reference.js";
 import studentGroupRouter from "./routes/studentGroupRoute.js";
 import researchTopicRouter from "./routes/topicRequestRoute.js";
 
@@ -15,7 +15,7 @@ app.use(express.json());
 
 connect();
 
-app.use("/api", markingSchemaRoutes);
+app.use("/api", referenceRoutes);
 app.use("/api", studentGroupRouter);
 app.use("/api", researchTopicRouter);
 
