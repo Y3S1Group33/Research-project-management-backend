@@ -6,7 +6,7 @@ import {
     updateResearchGroup,
     deleteResearchGroup,
 
-} from "../controllers/researchTopicController.js";
+} from "../controllers/researchGroupController.js";
 
 const researchGroupRouter = express.Router();
 
