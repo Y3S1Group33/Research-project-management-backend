@@ -1,7 +1,8 @@
 import {
     makeSubmission,
     getLatestStudentSubmissions,
-    updateLatestStudentSubmissions
+    updateLatestStudentSubmissions,
+    getLatestStudentSubmissionsById
 
 } from "../repository/createSubmissionRepo.js";
 
@@ -26,6 +27,15 @@ export const getLatestStudentSubmissionService = async () => {
         throw new Error(err.message, err.status);
     }
 };
+
+export const getLatestStudentSubmissionByIdService = async (id) => {
+    try {
+      const markingSchema = await getLatestStudentSubmissionsById(id);
+      return Promise.resolve(markingSchema);
+    } catch (err) {
+      throw new Error(err.message, err.status);
+    }
+  };
 
 export const updateLatestStudentSubmissionService = async (id, data) => {
     try {
