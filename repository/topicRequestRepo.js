@@ -45,8 +45,8 @@ TopicRequests.find()
         throw new Error("Internal Server Error.", 500);
     });
 
-export const getResearchTopic = () =>
-    TopicRequests.find()
+export const getResearchTopicsByInitialStatusRepo = () =>
+    TopicRequests.find({status: "initial"})
         .then((TopicRequests) => {
             return Promise.resolve(TopicRequests);
         })
