@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 const { Schema } = mongoose;
 
-const StudentSchema = new Schema(
+const students = new Schema(
     {
         studentId:String,
         email:String,
@@ -13,4 +13,4 @@ const StudentSchema = new Schema(
 
 );
 
-export const Student = mongoose.model("StudentSchema", StudentSchema);
+export const Student = mongoose.model("StudentUsers",students );
