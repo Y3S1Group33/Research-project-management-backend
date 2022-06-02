@@ -9,8 +9,8 @@ export const createStudent = (data) =>
             throw new Error("Internal server error.", 500);
         });
 
-export const getStudentById = (studentId) =>
-    Student.findById(studentId)
+export const getStudentById = (id) =>
+    Student.findById(id)
         .then((Student) => {
             if (!Student) {
                 throw new Error("Students not found.", 404);
