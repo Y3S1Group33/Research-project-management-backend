@@ -4,6 +4,9 @@ import {
     getResearchTopic,
     updateResearchTopic,
     deleteResearchTopic,
+    getResearchTopicsByFeedbackGivenStatusAndSupervisorIDRepo,
+    getResearchTopicsByReadyStatusAndPanelMemberIDRepo
+
 } from "../repository/topicRequestRepo.js"
 
 export const saveResearchTopicService = async (data) => {
@@ -24,6 +27,24 @@ export const getResearchTopicByIdService = async (id) => {
       throw new Error(err.message, err.status);
     }
   };
+
+export const getResearchTopicsByFeedbackGivenStatusAndSupervisorIDService = async (id) => {
+    try {
+        const researchTopic = await getResearchTopicsByFeedbackGivenStatusAndSupervisorIDRepo(id);
+        return Promise.resolve(researchTopic);
+    } catch (err) {
+        throw new Error(err.message, err.status);
+    }
+};
+
+export const getResearchTopicsByReadyStatusAndPanelMemberService = async (id) => {
+    try {
+        const researchTopic = await getResearchTopicsByReadyStatusAndPanelMemberIDRepo(id);
+        return Promise.resolve(researchTopic);
+    } catch (err) {
+        throw new Error(err.message, err.status);
+    }
+};
   
 export const getResearchTopicService = async () => {
     try {

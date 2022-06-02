@@ -18,6 +18,24 @@ TopicRequests.findById(id)
         return Promise.resolve(TopicRequests);
     });
 
+export const getResearchTopicsByFeedbackGivenStatusAndSupervisorIDRepo = (id) =>
+    TopicRequests.find({status: "feedbackGiven",supervisor: id})
+        .then((TopicRequests) => {
+            if (!TopicRequests) {
+                throw new Error("Research Topic Not Found.", 404);
+            }
+            return Promise.resolve(TopicRequests);
+        });
+
+export const getResearchTopicsByReadyStatusAndPanelMemberIDRepo = (id) =>
+    TopicRequests.find({status: "ready",researchPanelId: id})
+        .then((TopicRequests) => {
+            if (!TopicRequests) {
+                throw new Error("Research Topic Not Found.", 404);
+            }
+            return Promise.resolve(TopicRequests);
+        });
+
 export const getResearchTopic = () => 
 TopicRequests.find()
     .then((TopicRequests) => {
