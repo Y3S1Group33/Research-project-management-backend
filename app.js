@@ -23,6 +23,8 @@ app.use(cors());
 app.use(bodyParser.json())
 app.use(express.json());
 
+const PORT = 5000;
+
 connect();
 
 app.use("/api", referenceRoutes);
@@ -43,7 +45,7 @@ app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 
-const PORT = 5000;
+
 
 app.listen(PORT, () => {
     console.log(`Server started on port ${PORT}`);
