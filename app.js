@@ -15,6 +15,7 @@ import staffRoute from "./routes/staffRoute.js";
 import adminSubmissionRouter from "./routes/adminSubmissionRoute.js";
 import fileRoute from "./routes/fileRoute.js";
 import makeSubmissionRoute from "./routes/makeSubmissionRoute.js";
+import markingSchemaRoute from "./routes/markingSchema.js";
 
 
 const app = express();
@@ -35,6 +36,7 @@ app.use("/api",staffRoute);
 app.use("/api",adminSubmissionRouter);
 app.use("/api",fileRoute);
 app.use("/api",makeSubmissionRoute)
+app.use("/api",markingSchemaRoute)
 
 
 app.get("/", (req, res) => {
