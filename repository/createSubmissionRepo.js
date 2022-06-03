@@ -18,6 +18,15 @@ export const getLatestStudentSubmissions = () =>
             throw new Error("Internal server error.", 500);
         });
 
+export const getStudentSubmissions = () =>
+    StudentSubmission.find()
+        .then((makeSubmission) => {
+            return Promise.resolve(makeSubmission);
+        })
+        .catch(() => {
+            throw new Error("Internal server error.", 500);
+        });
+
         export const getLatestStudentSubmissionsById = (id) =>
         StudentSubmission.findById(id)
     .then((ReferenceSchemas) => {

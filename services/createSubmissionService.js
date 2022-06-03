@@ -1,6 +1,7 @@
 import {
     makeSubmission,
     getLatestStudentSubmissions,
+    getStudentSubmissions,
     updateLatestStudentSubmissions,
     getLatestStudentSubmissionsById
 
@@ -21,6 +22,15 @@ export const makeSubmissionService = async (data) => {
 export const getLatestStudentSubmissionService = async () => {
     try {
         const makeSubmission = await getLatestStudentSubmissions();
+        return Promise.resolve(makeSubmission);
+    } catch (err) {
+        throw new Error(err.message, err.status);
+    }
+};
+
+export const getStudentSubmissionService = async () => {
+    try {
+        const makeSubmission = await getStudentSubmissions();
         return Promise.resolve(makeSubmission);
     } catch (err) {
         throw new Error(err.message, err.status);
