@@ -28,7 +28,12 @@ export const getStudentsService = async () => {
 export const getStudentByIdService = async (studentId) => {
     try {
         const student = await getStudentById(studentId);
-        return Promise.resolve(student);
+        if(student.length===0){
+            return null
+        }else{
+            return Promise.resolve(student);
+        }
+
     } catch (err) {
         throw new Error(err.message, err.status);
     }

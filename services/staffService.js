@@ -20,7 +20,12 @@ export const createStaffUserService = async (data) => {
 export const getStaffUserByIdService = async (id) => {
     try {
         const staffUser = await getStaffUserById(id);
-        return Promise.resolve(staffUser);
+        if(staffUser.length===0){
+            return null
+        }else{
+            return Promise.resolve(staffUser);
+        }
+
     } catch (err) {
         throw new Error(err.message, err.status);
     }

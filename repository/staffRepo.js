@@ -1,4 +1,5 @@
 import { Staff } from "../models/staffModel.js";
+import {Student} from "../models/studentModel.js";
 
 export const createStaffUser = (data) =>
     Staff.create(data)
@@ -10,16 +11,18 @@ export const createStaffUser = (data) =>
         });
 
 export const getStaffUserById = (id) =>
-    Staff.findById(id)
+    Staff.find({email:id})
         .then((staff) => {
             if (!staff) {
                 throw new Error("staff not found.", 404);
             }
-            return Promise.resolve(MarkingSchemas);
+            return Promise.resolve(staff);
         })
         .catch(() => {
             throw new Error("Internal server error.", 500);
         });
+
+
 
 export const getStaffUser = () =>
     Staff.find()

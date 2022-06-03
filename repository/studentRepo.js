@@ -10,7 +10,7 @@ export const createStudent = (data) =>
         });
 
 export const getStudentById = (id) =>
-    Student.findById(id)
+    Student.find({email:id})
         .then((Student) => {
             if (!Student) {
                 throw new Error("Students not found.", 404);
