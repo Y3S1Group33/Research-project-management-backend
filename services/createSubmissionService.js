@@ -5,7 +5,6 @@ import {
 } from "../repository/createSubmissionRepo.js";
 
 
-
 export const makeSubmissionService = async (data) => {
     const { title, submittedDate, submittedStudent,imageUrl, evaluation } = data;
     try {
