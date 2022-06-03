@@ -7,9 +7,9 @@ import {
   } from "../repository/reference.js";
   
   export const saveReferenceSchemaService = async (data) => {
-    const { type, title, description } = data;
+    const { type, title, description, panelId } = data;
     try {
-      await saveReferenceSchema({ type, title, description });
+      await saveReferenceSchema({ type, title, description, panelId });
       return Promise.resolve("Successfully saved Submission.");
     } catch (err) {
       throw new Error(err.message, err.status);
