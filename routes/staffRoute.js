@@ -9,8 +9,6 @@ import {
 
 const staffRouter = express.Router();
 
-
-
 staffRouter.post("/staff", createStaffController);
 staffRouter.get("/staff/:id", getStaffByIdController);
 staffRouter.get("/staff", getStaffUsersController);

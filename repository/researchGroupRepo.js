@@ -3,6 +3,7 @@ import { ResearchGroups } from "../models/researchGroupModel.js";
 export const saveResearchGroupRepo = (data) =>
     ResearchGroups.create(data)
         .then((ResearchGroup) => {
+            console.log(ResearchGroup);
             return Promise.resolve(ResearchGroup);
         })
         .catch(() => {

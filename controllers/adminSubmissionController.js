@@ -7,8 +7,6 @@ import {
     getLatestAdminSubmissionService
 } from "../services/adminSubmissionService.js";
 
-
-
 export const createAdminSubmissionController = async (req, res) => {
     try {
         const staffUser = await CreateAdminSubmissionService(req.body);

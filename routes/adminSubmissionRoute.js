@@ -10,8 +10,6 @@ import {
 
 const adminSubmissionRouter = express.Router();
 
-
-
 adminSubmissionRouter.post("/adminSubmission", createAdminSubmissionController);
 adminSubmissionRouter.get("/adminSubmission/:id", getAdminSubmissionByIdController);
 adminSubmissionRouter.get("/adminLatestSubmission", getLatestAdminSubmissionController);

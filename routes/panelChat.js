@@ -9,8 +9,6 @@ import {
 
 const panelChatRouter = express.Router();
 
-
-
 panelChatRouter.post("/panelChat", savePanelChatSchema);
 panelChatRouter.get("/panelChat/:id", getPanelChatSchemaById);
 panelChatRouter.get("/panelChat", getPanelChatSchema);

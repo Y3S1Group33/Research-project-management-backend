@@ -9,8 +9,6 @@ import {
 
 const studentRoutes = express.Router();
 
-
-
 studentRoutes.post("/student", createController);
 studentRoutes.get("/student", getStudentsController);
 studentRoutes.get("/student/:id", getStudentByIdController);

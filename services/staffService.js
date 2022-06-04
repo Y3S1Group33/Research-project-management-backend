@@ -6,7 +6,6 @@ import {
     deleteStaffUser,
 } from "../repository/staffRepo.js";
 
-
 export const createStaffUserService = async (data) => {
     const { staffId, userName, email,contactNumber,password,role,specializedArea } = data;
     try {

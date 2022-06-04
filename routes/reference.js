@@ -9,8 +9,6 @@ import {
 
 const markingSchemaRouter = express.Router();
 
-
-
 markingSchemaRouter.post("/reference", saveReferenceSchema);
 markingSchemaRouter.get("/reference/:id", getReferenceSchemaById);
 markingSchemaRouter.get("/reference", getReferenceSchema);

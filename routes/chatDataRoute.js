@@ -8,8 +8,6 @@ import {
 
 const chatDataRouter = express.Router();
 
-
-
 chatDataRouter.post("/chatData", saveChatData);
 chatDataRouter.get("/chatData/:id", getChatDataByChatId);
 chatDataRouter.get("/chatData", getChatData);

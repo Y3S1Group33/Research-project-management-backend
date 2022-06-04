@@ -1,7 +1,6 @@
 import mongoose from "mongoose";
 
 const { Schema } = mongoose;
-
 const ReferenceSchema = new Schema(
   {
     type: String,

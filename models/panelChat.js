@@ -1,7 +1,6 @@
 import mongoose from "mongoose";
 
 const { Schema } = mongoose;
-
 const PanelChatSchema = new Schema(
   {
     userId: String,
@@ -9,5 +8,4 @@ const PanelChatSchema = new Schema(
     date: String,
   }
 );
-
 export const PanelChatSchemas = mongoose.model("PanelChatSchemas", PanelChatSchema);

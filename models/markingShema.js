@@ -1,7 +1,6 @@
 import mongoose from "mongoose";
 
 const { Schema } = mongoose;
-
 const markingSchemaModel = new Schema(
     {
         title:String,
@@ -11,7 +10,6 @@ const markingSchemaModel = new Schema(
             required: true,
         }
     }
-
 );
 
 export const markingSchemaSubmission = mongoose.model("markingSchemaSubmission",markingSchemaModel );

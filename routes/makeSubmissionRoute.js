@@ -12,6 +12,4 @@ adminSubmissionRouter.get("/makeSubmissionAll", getStudentSubmissionController);
 adminSubmissionRouter.get("/makeSubmission/:id", getLatestStudentSubmissionControllerById);
 adminSubmissionRouter.put("/makeSubmission/:id", updateLatestStudentSubmissionController);
 
-
-
 export default adminSubmissionRouter;
