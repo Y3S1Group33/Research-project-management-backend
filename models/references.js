@@ -6,6 +6,7 @@ const ReferenceSchema = new Schema(
     type: String,
     title: String,
     description: String,
+    panelId: String,
   }
 );
 
